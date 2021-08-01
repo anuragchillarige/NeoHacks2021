@@ -104,7 +104,7 @@ public class Graph extends JPanel {
                 g.drawLine(ovalXPoint + 2, 45, ovalXPoint + 2, 55);
 
                 if (i>= 1) {
-                    g.drawLine(ovalXPoint - 100, scores[i-1] + 48, ovalXPoint, scores[i] + 48);
+                    g.drawLine(ovalXPoint - 100 + 2, scores[i-1] + 48 + 2, ovalXPoint + 2, scores[i] + 48 + 2);
                 }
                 ovalXPoint += 100;
                 strXPoint += 100;

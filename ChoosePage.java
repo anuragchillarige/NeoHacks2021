@@ -32,6 +32,7 @@ import java.awt.event.MouseListener;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
 
+
 import java.awt.event.AdjustmentEvent;
 import java.awt.event.AdjustmentListener;
 
@@ -42,44 +43,38 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 
 import java.util.Scanner;
-import java.util.Calendar;
-import java.util.Date;
 
-public class ScreenManager extends JPanel {
-    private ScreenManager sm;
-    private CardLayout cl;
-    private String username; 
+public class ChoosePage extends JPanel implements ActionListener{
 
-    public ScreenManager() {
-        sm = this;
-        cl = new CardLayout();
-        setLayout(cl);
+    private ScreenManager sm; private CardLayout cl;
+    public ChoosePage(ScreenManager smIn, CardLayout clIn) {
+        sm = smIn; cl = clIn;
 
-        CreditAccount ca = new CreditAccount();
-        Home home = new Home(cl, sm);
-        SignUp su = new SignUp(sm, cl, ca);
-        SignIn si = new SignIn(sm, cl, ca);
-        GetInformation gi = new GetInformation(sm, cl);
-        Graph g = new Graph(sm, cl);
-        ChoosePage cp = new ChoosePage(sm, cl);
+        setBackground( new Color(17, 138, 178) );
+        setLayout( new GridLayout(3,1) );
 
-        add(home, "home");
-        add(su, "signup");
-        add(si, "signin");
-        add(gi, "getinformation");
-        add(g, "graph");
-        add(cp, "choosepage");
+        JLabel title = new JLabel("Choose An Option", JLabel.CENTER);
+        JPanel centerPan = new JPanel( new FlowLayout(FlowLayout.CENTER) );
+        JButton graph = new JButton("View Graph");
+        JButton info = new JButton("New Entry");
+        graph.addActionListener(this);
+        graph.addActionListener(this);
+        centerPan.setBackground( new Color(17, 138, 178) );
+        centerPan.add(info);
+        centerPan.add(graph);
 
-        cl.show(this, "home");
+        add(title);
+        add(centerPan);
 
     }
 
-    public void setUsername(String usernameIn) {
-        username = usernameIn;
-    }
+    public void actionPerformed(ActionEvent evt) {
+        String btn = evt.getActionCommand();
 
-    public String getUsername() {
-        return username;
+        if (btn.equals("View Graph")) {
+            cl.show(sm, "graph");
+        } else {
+            cl.show(sm, "getinformation");
+        }
     }
-
 }

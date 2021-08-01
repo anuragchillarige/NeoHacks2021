@@ -118,7 +118,7 @@ public class SignIn extends JPanel implements ActionListener{
         if (evt.getActionCommand().equals("Sign In!")) {
             boolean signedIn = ca.signIn(usernameText, passwordText);
             if (signedIn == true) {
-                cl.show(sm, "getinformation");
+                cl.show(sm, "choosepage");
                 sm.setUsername(usernameText);
             } else {
                 username.setText("Enter a username");
