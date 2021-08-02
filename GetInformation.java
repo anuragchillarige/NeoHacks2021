@@ -1,44 +1,16 @@
-import java.awt.Graphics;
-import java.awt.Color;
-import java.awt.Font;
-import java.awt.Dimension;
 import java.awt.GridLayout;
-import java.awt.BorderLayout;
 import java.awt.FlowLayout;
 import java.awt.CardLayout;
-
-import java.util.Scanner;
 import java.io.File;
 import java.io.IOException;
-import javax.imageio.ImageIO;
 import java.io.PrintWriter;
 import java.io.FileWriter;
-import java.io.FileNotFoundException;
-import java.util.ArrayList;
-
-import javax.swing.JFrame;
 import javax.swing.JPanel;
-
-import java.awt.Rectangle;
-
 import javax.swing.JButton;
-import javax.swing.JRadioButton;
-import javax.swing.ButtonGroup;
 import javax.swing.JTextField;
 import javax.swing.JTextArea;
-import javax.swing.JLabel;
-import javax.swing.JSlider;
-import javax.swing.Timer;
-
-
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
-import javax.swing.event.ChangeEvent;
-import javax.swing.event.ChangeListener;
-import java.awt.event.KeyListener;
-import java.awt.event.KeyEvent;
-
-import java.util.Date;
 import java.util.Calendar;
 
 public class GetInformation extends JPanel implements ActionListener {
@@ -53,7 +25,6 @@ public class GetInformation extends JPanel implements ActionListener {
     private String creditLengthAnswer;
     private String newCreditAnswer;
     private String creditMixAnswer;
-    private JPanel informationPanel;
 
 	private JTextField derogatoryTF;
 	private JTextField debtTF;
